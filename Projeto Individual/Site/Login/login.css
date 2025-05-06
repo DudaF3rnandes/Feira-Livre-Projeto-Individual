@@ -18,7 +18,7 @@ body {
     color: #fff;
     display: flex;
     flex-direction: column;
-    filter:brightness(0.75);
+    
 }
 
 /* Navbar */
