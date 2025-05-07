@@ -41,21 +41,28 @@ function nextQuestion(e) {
   }
 }
 
-function finish() {
 
-  if (questionsCorrect >= 5) {
-     textFinish.innerHTML = `PARABÉNS, VOCÊ SE TORNOU UM FEIRANTE E CONSEGUE COMPRAR SUA BARRACA!`
-     content.style.display = "none";
-     contentFinish.style.display = "flex";
-  } else {
-    textFinish.innerHTML = `INFELIZMENTE, VOCÊ NÃO SE TORNOU UM FEIRANTE E NÃO CONSEGUE COMPRAR SUA BARRACA!`
-     content.style.display = "none";
-     contentFinish.style.display = "flex";
+  function finish() {
+    if (currentCoins >= 10000) {
+      textFinish.innerHTML = `<p style="text-align: center; font-size: 15px; font-weight: bold; color: green;">
+        PARABÉNS, VOCÊ SE TORNOU UM FEIRANTE E CONSEGUE COMPRAR SUA BARRACA!
+      </p>`;
+      content.style.display = "none";
+      contentFinish.style.display = "flex";
+      textFinish.innerHTML += `<p><img src="Gemini_Generated_Image_m843slm843slm843-removebg-preview.png" width="300" style="display:block; margin: 0 auto;"></p>`;
+    } else {
+      textFinish.innerHTML = `<p style="text-align: center; font-size: 15px; font-weight: bold; color: red;"> INFELIZMENTE, VOCÊ NÃO SE TORNOU UM FEIRANTE E NÃO CONSEGUE COMPRAR SUA BARRACA!
+      </p>`;
+      content.style.display = "none";
+      contentFinish.style.display = "flex";
+      textFinish.innerHTML += `<p><img src="Gemini_Generated_Image_m843slm843slm843-removebg-preview.png" width="300" style="display:block; margin: 0 auto;"></p>`;
+    }
   }
+  
  
   //textFinish.innerHTML = `você acertou ${questionsCorrect} de ${questions.length}`;
 
-}
+
 
 function loadQuestion() {
   spnQtd.innerHTML = `${currentIndex + 1}/${questions.length}`;
