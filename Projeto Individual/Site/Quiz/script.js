@@ -11,7 +11,7 @@ import questions from "./questions.js";
 
 let currentIndex = 0;
 let questionsCorrect = 0;
-let currentCoins = 0;
+let currentCoins = 0; 
 
 
 btnRestart.onclick = () => {
@@ -26,11 +26,15 @@ btnRestart.onclick = () => {
 function nextQuestion(e) {
   if (e.target.getAttribute("data-correct") === "true") {
     questionsCorrect++;
+    currentCoins+= 1500
+  }  else {
+    currentCoins = Math.max(0, currentCoins - 500); // nunca negativo //pesquisado a fundo
   }
-
+ 
+  coinDisplay.textContent = `$${currentCoins}`;
+  
   if (currentIndex < questions.length - 1) {
     currentIndex++;
-    
     loadQuestion();
   } else {
     finish();
@@ -59,17 +63,19 @@ function loadQuestion() {
   answers.innerHTML = "";
   question.innerHTML = item.question;
 
-  item.answers.forEach((answer) => {
+  for (let i = 0; i < item.answers.length; i++) {
+    const answer = item.answers[i];
     const div = document.createElement("div");
-
+  
     div.innerHTML = `
-    <button class="answer" data-correct="${answer.correct}">
-      ${answer.option}
-    </button>
+      <button class="answer" data-correct="${answer.correct}">
+        ${answer.option}
+      </button>
     `;
-
+  
     answers.appendChild(div);
-  });
+  }
+  
 
   document.querySelectorAll(".answer").forEach((item) => {
     item.addEventListener("click", nextQuestion);

@@ -128,6 +128,16 @@ button:hover {
   background-color: #7de85f;
 }
 
+.spnQtd {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 50px;
+  height: 40px;
+  border: 2px solid #7de85f;
+  padding: 5px;
+
+}
+
 .finish {
   display: none;
   flex-direction: column;
