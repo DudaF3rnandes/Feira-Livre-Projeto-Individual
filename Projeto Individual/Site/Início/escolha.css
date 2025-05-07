@@ -113,13 +113,14 @@ body {
     text-transform: uppercase;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
     transition: transform 0.3s ease;
+  
 }
 
 .barraca:hover {
     transform: scale(1.05);
-    background-color: #eec364;
+    background-color: #f25f10d1;
+   
 }
-
 
 .barraca img {
     width:90%;
@@ -131,4 +132,14 @@ body {
     font-weight: bold;
     font-size: 16px;
     margin-top: -35px;
+    text-decoration: none;
+    
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit; /* ou qualquer cor desejada, como #000 para preto */
 }
