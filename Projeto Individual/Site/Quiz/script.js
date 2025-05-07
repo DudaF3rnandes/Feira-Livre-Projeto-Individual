@@ -1,6 +1,7 @@
 const question = document.querySelector(".question");
 const answers = document.querySelector(".answers");
 const spnQtd = document.querySelector(".spnQtd");
+const coinDisplay = document.querySelector(".coin-count");
 const textFinish = document.querySelector(".finish span");
 const content = document.querySelector(".content");
 const contentFinish = document.querySelector(".finish");
@@ -10,6 +11,8 @@ import questions from "./questions.js";
 
 let currentIndex = 0;
 let questionsCorrect = 0;
+let currentCoins = 0;
+
 
 btnRestart.onclick = () => {
   content.style.display = "flex";
@@ -27,6 +30,7 @@ function nextQuestion(e) {
 
   if (currentIndex < questions.length - 1) {
     currentIndex++;
+    
     loadQuestion();
   } else {
     finish();
