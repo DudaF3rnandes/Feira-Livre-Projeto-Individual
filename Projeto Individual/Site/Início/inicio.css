@@ -7,43 +7,46 @@
 
 html, body {
     height: 100%;
-    overflow: auto; /* Permite rolagem */
+    overflow: auto;
 }
 
 body {
-    background: url('FEIRA\ LIVRE.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background: url('FEIRA\ LIVRE.png') no-repeat center center/cover;
     min-height: 100vh;
     color: #fff;
     display: flex;
     flex-direction: column;
 }
 
-/* Navbar */
 .navbar {
     width: calc(100% - 40px);
     background-color: #b44b25;
     border-radius: 16px;
-    padding: 0.5rem 2rem;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    margin: 20px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    overflow: hidden;
+    flex-shrink: 0;
 }
 
 .navbar h2 a {
     font-size: 30px;
     color: #f4ecda;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
     gap: 25px;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar ul li a {
@@ -52,6 +55,7 @@ body {
     color: #f4ecda;
     position: relative;
     transition: 0.3s ease;
+    white-space: nowrap;
 }
 
 .navbar ul li a::before {
