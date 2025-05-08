@@ -55,7 +55,7 @@ function nextQuestion(e) {
       </p>`;
       content.style.display = "none";
       contentFinish.style.display = "flex";
-      textFinish.innerHTML += `<p><img src="Gemini_Generated_Image_m843slm843slm843-removebg-preview.png" width="300" style="display:block; margin: 0 auto;"></p>`;
+      textFinish.innerHTML += `<p><img src="Gemini_Generated_Image_76k3sw76k3sw76k3-removebg-preview.png" width="300" style="display:block; margin: 0 auto;"></p>`;
     }
   }
   
