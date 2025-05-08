@@ -6,24 +6,24 @@
 }
 
 html, body {
-    height: 80%;
-    overflow: hidden; 
+    height: 100%;
+    overflow: auto; /* Permite rolagem */
 }
 
 body {
     background: url('FEIRA\ LIVRE.png');
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     min-height: 100vh;
     color: #fff;
     display: flex;
     flex-direction: column;
-    
 }
 
 /* Navbar */
 .navbar {
-    width: calc(100% - 40px); /* para compensar a margem e evitar scroll */
+    width: calc(100% - 40px);
     background-color: #b44b25;
     border-radius: 16px;
     padding: 0.5rem 2rem;
@@ -31,7 +31,6 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    margin-top: 20px;
     margin: 20px;
 }
 
@@ -74,7 +73,7 @@ body {
     width: 100%;
 }
 
-
+/* Hero Section */
 .hero {
     flex: 1;
     display: flex;
@@ -82,8 +81,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
-    
+    padding: 40px 20px;
 }
 
 .hero h2 {
@@ -106,3 +104,4 @@ body {
 .btn-jogar:hover {
     background-color: #4b6445;
 }
+
