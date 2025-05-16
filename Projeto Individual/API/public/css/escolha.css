@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html, body {
+    height: 80%;
+    overflow: hidden; 
+}
+
+body {
+    background: url('..//assets/FEIRA\ LIVRE.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/* Navbar */
+.navbar {
+    width: calc(100% - 30px); /* para compensar a margem e evitar scroll */
+    background-color: #b44b25;
+    border-radius: 16px;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    margin-top: 20px;
+    margin: 20px;
+}
+
+.navbar h2 a {
+    font-size: 30px;
+    color: #f4ecda;
+    text-decoration: none;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #f4ecda;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.navbar ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background-color: #4b6445;
+    transition: 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #fff;
+}
+
+.navbar ul li a:hover::before {
+    width: 100%;
+}
+
+/*Container*/
+
+.titulo {
+    text-align: center;
+    font-size: 28px;
+    margin: 40px 0 10px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 5px;
+
+}
+
+.barracas-container {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    gap: 30px;
+    max-width: 800px;
+    height: 400px;
+    margin: 0  auto;
+    padding: 20px;
+    justify-content: space-around;
+    
+}
+
+
+.barraca {
+    width: 250px;
+    height: 250px;
+    background-color: #b44b25;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+  
+}
+
+.barraca:hover {
+    transform: scale(1.05);
+    background-color: #f25f10d1;
+   
+}
+
+.barraca img {
+    width:90%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.barraca p {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: -35px;
+    text-decoration: none;
+    
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit; /* ou qualquer cor desejada, como #000 para preto */
+}
