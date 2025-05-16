@@ -1,2 +1,2 @@
 # Feira-Livre-Projeto-Individual
-Repositório criado para versionamento de códigos do meu Projeto Individual
+Olá, eu sou a Maria Eduarda, estudante da SPTECH e estou me desafiando criando um site sobre as Feiras Livres!
