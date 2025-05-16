@@ -91,7 +91,7 @@ body {
   height: 120%;
   padding: 20px 0;
   margin-left: 460px;
-  margin-top: 20px;
+  margin-top: 50px;
   box-shadow: 2px 2px 5px #000;
 }
 
@@ -199,4 +199,12 @@ input {
 a {
   text-decoration: none;
   color: #fff;
+}
+
+.conta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #4b6445;
 }
