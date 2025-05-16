@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html, body {
+    height: 80%;
+    overflow: hidden; 
+}
+
+body {
+    background: url('..//assets/FEIRA\ LIVRE.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/* Navbar */
+.navbar {
+    width: calc(100% - 40px); /* para compensar a margem e evitar scroll */
+    background-color: #b44b25;
+    border-radius: 16px;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    margin-top: 20px;
+    margin: 20px;
+}
+
+.navbar h2 a {
+    font-size: 30px;
+    color: #f4ecda;
+    text-decoration: none;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #f4ecda;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.navbar ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background-color: #4b6445;
+    transition: 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #fff;
+}
+
+.navbar ul li a:hover::before {
+    width: 100%;
+}
+
+
+
+
+/* LOGIN */
+
+/*.login {
+  height: var(--tamanho-login);
+  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-size: cover;
+}*/
+
+.login .container {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.card {
+  width: 40%;
+  background-color: #f4ecda;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #b44b25;
+  flex-direction: column;
+  height: 110%;
+  padding: 20px 0;
+  margin-left: 460px;
+  margin-top: 60px;
+  box-shadow: 2px 2px 5px #000;
+}
+
+.card h2 {
+  margin: 10px;
+  font-size: 30px;
+}
+
+.formulario {
+  display: flex;
+  height: 90%;
+  width: 80%;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.formulario span {
+  font-size: 15px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.formulario input {
+  border: 2px solid #b44b25;
+  text-align: center;
+  border-radius: 10px;
+  margin: 0;
+}
+
+.formulario select {
+  border: 2px solid #32b9cd;
+  background-color: white;
+  color: gray;
+  height: 36px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 0;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 5px 0;
+}
+
+
+.botao {
+  cursor: pointer;
+  font-family: "Barlow", sans-serif;
+  border: 0;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  background-color: #4b6445;
+  width: 120px;
+  height: 40px;
+  align-self: center;
+  margin-top: 20px;
+}
+
+.loading-div {
+  width: 50px;
+  display: none;
+}
+
+.loading-div img {
+  height: 50px;
+  width: 50px;
+}
+
+#div_erros_login {
+  display: none
+}
+
+input {
+  margin-bottom: 10px;
+  border: 2px solid #b44b25;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #eec364;
+}
+
+.botao-duplo {
+   display: flex;
+   justify-content: space-around;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
