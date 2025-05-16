@@ -14,7 +14,7 @@ este é o meu primeiro projeto individual criando um site sobre as Feiras Livres
 
   <p align="center">
     <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=css,html,js,discord,github,vscode,mysql" />
+    <img src="https://skillicons.dev/icons?i=css,html,js,discord,github,vscode,mysql,windows" />
   </a>
 
 
