@@ -9,7 +9,7 @@ este é o meu primeiro projeto individual criando um site sobre as Feiras Livres
 
 <p align="center"><img src="https://github.com/user-attachments/assets/2c22c379-05f3-459e-badb-7132f146e16e" style="width:80%;" alt="Texto Alternativo">
 
-<p align="center">Ferramentes de domínio:
+<p align="center">Ferramentas de domínio:
 
 
   <p align="center">
