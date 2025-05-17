@@ -37,7 +37,7 @@
     outline: none;
     border:none;
     border-radius: 20px;
-    background: rgba(128, 128, 128, 0.23) ;
+    background: rgb(233, 206, 206) ;
 }
 
 .search i {
@@ -111,7 +111,7 @@
     width: calc(100% - 260px);
     left: 260px;
     min-height: calc(100vh - 60px);
-    background-color: beige;
+    background-color: #f4ecda;
 }
 
 .cards {
@@ -145,9 +145,9 @@
 
 }
 
-.icon-box i{
-   font-size: 45px;
-   color: orange; 
+.icon-box img{
+   width: 50px;
+  
 }
 
 /*chart.js*/
