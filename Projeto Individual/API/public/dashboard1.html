@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feira Livre - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">
+                <h2>Feira Livre</h2>
+            </div>
+            <div class="search">
+                <input type="text" id="search">
+                <label for="search"><i class="fas fa-search"></i></label>
+            </div>
+            <i class="fas fa-bell"></i>
+            <div class="user">
+                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fimagensempng.com.br%2Ficone-usuario-png-2%2F&psig=AOvVaw34Q7GApGQBsQs4FMjUWJkR&ust=1747521920207000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJCestWIqY0DFQAAAAAdAAAAABAK"
+                    alt="Usuário">
+            </div>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="">
+                        <i class="fas fa-th-large"></i>
+                        <div>Início</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fas fa-th-large"></i>
+                        <div>Sobre a Feira Livre</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fas fa-th-large"></i>
+                        <div>Perguntas Frequentes</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="cards">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">1217</div>
+                        <div class="card-name">Students</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-user-gradute"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">1217</div>
+                        <div class="card-name">Students</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-user-gradute"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">1217</div>
+                        <div class="card-name">Students</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-user-gradute"></i>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">1217</div>
+                        <div class="card-name">Students</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-user-gradute"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="charts">
+                <div class="chart">
+                    <h2>Análise de Desempenho</h2>
+                  <canvas id="myChart"></canvas>
+                </div>
+                <div class="chart">
+                    <h2>Questões Corretas</h2>
+                    <canvas id="doughnut"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+<script src="
+https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js
+"></script>
+<script src="chart1.js"></script>
+<script src="chart2.js"></script>
+</body>
+
+</html>
