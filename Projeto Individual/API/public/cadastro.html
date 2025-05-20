@@ -104,7 +104,7 @@
     }
 
     // Verificando se o código de ativação é de alguma empresa cadastrada
-    for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
+    /*for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
       if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
         idEmpresaVincular = listaEmpresasCadastradas[i].id
         console.log("Código de ativação válido.");
@@ -114,7 +114,7 @@
         mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
         finalizarAguardar();
       }
-    }
+    }*/
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
@@ -160,7 +160,7 @@
   }
 
   // Listando empresas cadastradas 
-  function listar() {
+ /* function listar() {
     fetch("/empresas/listar", {
       method: "GET",
     })
@@ -180,5 +180,5 @@
   }
   function sumirMensagem() {
     cardErro.style.display = "none";
-  }
+  }*/
 </script>
