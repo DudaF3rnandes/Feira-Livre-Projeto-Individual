@@ -90,12 +90,14 @@ section details summary{
     padding: 2%;
     border-bottom: 2px solid #625448;
     margin-top: 5px;
+   
 }
 
 section details p{
-    background-color: #4b6445;
+    background-color: #4b6445ef;
     padding: 2%;
     transition: all .5s;
+    color: #fff;
 }
 
 section h2 {
