@@ -6,10 +6,10 @@ var myChart = new Chart(ctx, {
             'Pergunta 1', 'Pergunta 2', 'Pergunta 3', 'Pergunta 4', 
             'Pergunta 5', 'Pergunta 6', 'Pergunta 7', 'Pergunta 8', 
             'Pergunta 9', 'Pergunta 10'
-        ], // As 10 perguntas no eixo X
+        ], 
         datasets: [{
             label: '# de Votos',
-            data: [0, 1, 2, 0, 1, 2, 0, 1, 2, 0], // Mapeando palavras no eixo Y
+            data: [1, 2, 2, 1, 2, 2, 1, 1, 2, 1],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.6)', // Vermelho
                 'rgba(54, 162, 235, 0.6)', // Azul
@@ -42,7 +42,7 @@ var myChart = new Chart(ctx, {
             y: {
                 ticks: {
                     callback: function(value) {
-                        var labels = ['Ótimo', 'Bom', 'Ruim'];
+                        var labels = ['Ruim', 'Bom', 'Ótimo'];
                         return labels[value] || '';
                     },
                     stepSize: 1,
