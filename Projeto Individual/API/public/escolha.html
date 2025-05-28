@@ -19,31 +19,36 @@
     <h2 class="titulo">Escolha sua barraca!</h2>
 
 <div class="barracas-container">
-    <a href="./quiz.html"><div class="barraca">
+    <a href="./quiz.html" onclick="escolherBarraca('Frutas')"><div class="barraca">
         <img src="./assets/4-removebg-preview.png" alt="Frutas">
         <p>EU QUERO VENDER FRUTAS</p>
     </div></a>
-    <a href="./quiz.html"><div class="barraca">
+    <a href="./quiz.html" onclick="escolherBarraca('Legumes')"><div class="barraca">
         <img src="./assets/6-removebg-preview.png" alt="Legumes">
         <p>EU QUERO VENDER LEGUMES</p>
     </div></a>
-    <a href="./quiz.html"><div class="barraca">
+    <a href="./quiz.html" onclick="escolherBarraca('Bananas')"><div class="barraca">
         <img src="./assets/2-removebg-preview.png" alt="Bananas">
         <p>EU QUERO VENDER BANANAS</p>
     </div>
-    <a href="./quiz.html"><div class="barraca">
+    <a href="./quiz.html" onclick="escolherBarraca('Batatas')"><div class="barraca">
         <img src="./assets/1-removebg-preview.png" alt="Batatas">
         <p>EU QUERO VENDER BATATAS</p>
     </div></a>
-    <a href="./quiz.html"><div class="barraca">
+    <a href="./quiz.html"  onclick="escolherBarraca('Pastéis')"><div class="barraca">
         <img src="./assets/Design_sem_nome__13_-removebg-preview.png" alt="Pastéis">
         <p>EU QUERO VENDER PASTÉIS</p>
     </div></a>
-    <a href="./quiz.html"><div class="barraca">
+    <a href="./quiz.html" onclick="escolherBarraca('Verduras')"><div class="barraca">
         <img src="./assets/5-removebg-preview.png" alt="Verduras">
         <p>EU QUERO VENDER VERDURAS</p>
     </div></a>
 </div>
+<script>
+  function escolherBarraca(nome) {
+    localStorage.setItem("barracaEscolhida", nome);
+  }
+</script>
 
 </body>
 </html>
