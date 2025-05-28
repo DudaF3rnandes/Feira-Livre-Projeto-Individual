@@ -51,29 +51,28 @@
             <div class="cards">
                 <div class="card">
                     <div class="card-content">
-                         <div class="card-name">TEMPO DE RESPOSTA</div>
-                        <div class="number">1217</div>
-                       
+                        <div class="card-name">TEMPO DE RESPOSTA</div>
+                        <div class="number" id="tempoResposta">--</div>
                     </div>
                     <div class="icon-box">
-                        <i class="fas fa-user-gradute"></i>
+                        <i class="fas fa-user-graduate"></i>
                     </div>
                 </div>
+
                 <div class="card">
                     <div class="card-content">
-                         <div class="card-name">BARRACA ESCOLHIDA</div>
-                        <div class="number">1217</div>
-                       
+                        <div class="card-name">BARRACA ESCOLHIDA</div>
+                        <div class="number" id="barracaEscolhida">--</div>
                     </div>
                     <div class="icon-box">
-                        <i class="fas fa-user-gradute"></i>
+                        <i class="fas fa-user-graduate"></i>
                     </div>
                 </div>
+
                 <div class="card">
                     <div class="card-content">
-                           <div class="card-name">FEIRACOIN PERDIDA(S)</div>
-                        <div class="number">1217</div>
-                     
+                        <div class="card-name">FEIRACOIN PERDIDA(S)</div>
+                        <div class="number" id="coinPerdida">--</div>
                     </div>
                     <div class="icon-box">
                         <img src="./assets/7a039fe9-be8c-44c0-85bb-c88625c20f20-removebg-preview.png" alt="">
@@ -83,8 +82,7 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-name">SALDO FINAL FEIRACOIN</div>
-                        <div class="number">1217</div>
-                        
+                        <div class="number" id="coinFinal">--</div>
                     </div>
                     <div class="icon-box">
                         <img src="./assets/7a039fe9-be8c-44c0-85bb-c88625c20f20-removebg-preview.png" alt="">
@@ -94,21 +92,51 @@
             <div class="charts">
                 <div class="chart">
                     <h2>Análise de Desempenho</h2>
-                  <canvas id="myChart"></canvas>
+                    <canvas id="myChart"></canvas>
                 </div>
                 <div class="chart">
                     <h2>Questões Corretas</h2>
                     <canvas id="doughnut"></canvas>
                 </div>
             </div>
+
         </div>
-    </div>
-    </div>
-<script src="
-https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js
-"></script>
-<script src="./js/chart1.js"></script>
-<script src="./js/chart2.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
+        <script src="./js/chart1.js"></script>
+        <script src="./js/chart2.js"></script>
+        <script src="./js/script.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const data = JSON.parse(localStorage.getItem("quizData"));
+
+                if (data) {
+                    const cards = document.querySelectorAll(".card .number");
+                    cards[0].innerText = data.tempoResposta + " s";
+                    cards[1].innerText = data.barracaEscolhida;
+                    cards[2].innerText = `$${data.moedasPerdidas}`;
+                    cards[3].innerText = `$${data.saldoFinal}`;
+
+                    // Atualizar gráfico de barras
+                    const barChart = window.myChart;
+
+                    if (barChart && data.respostas) {
+                        barChart.data.datasets[0].data = data.respostas;
+                        barChart.update();
+                    }
+
+
+                    // Atualizar gráfico de pizza
+                    const doughnutChart = window.doughnutChart;
+
+                    if (doughnutChart) {
+                        doughnutChart.data.datasets[0].data = [data.incorretas, data.corretas];
+                        doughnutChart.update();
+                    }
+                }
+            });
+        </script>
+
+
 </body>
 
 </html>
