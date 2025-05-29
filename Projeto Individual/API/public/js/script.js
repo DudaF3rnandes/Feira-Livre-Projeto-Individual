@@ -5,7 +5,8 @@ const coinDisplay = document.querySelector(".coin-count");
 const textFinish = document.querySelector(".finish span");
 const content = document.querySelector(".content");
 const contentFinish = document.querySelector(".finish");
-const btnRestart = document.querySelector(".finish button");
+const btnRestart = document.querySelector("#btnDashboard");
+
 
 import questions from "./questions.js";
 
@@ -19,7 +20,7 @@ let respostasPorPergunta = []; // 2 = acerto, 1 = erro
 btnRestart.onclick = () => {
   content.style.display = "flex";
   contentFinish.style.display = "none";
-
+  window.location.href = "dashboard1.html";
   currentIndex = 0;
   questionsCorrect = 0;
   questionsIncorrect = 0;
@@ -27,6 +28,9 @@ btnRestart.onclick = () => {
 
   loadQuestion();
 };
+
+
+
 
 function nextQuestion(e) {
   const correta = e.target.getAttribute("data-correct") === "true";
