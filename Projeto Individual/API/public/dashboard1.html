@@ -111,7 +111,7 @@
 
                 if (data) {
                     const cards = document.querySelectorAll(".card .number");
-                    cards[0].innerText = data.tempoResposta + " s";
+                    cards[0].innerText = data.tempoFormatado;
                     cards[1].innerText = data.barracaEscolhida;
                     cards[2].innerText = `$${data.moedasPerdidas}`;
                     cards[3].innerText = `$${data.saldoFinal}`;
