@@ -6,6 +6,7 @@ const textFinish = document.querySelector(".finish span");
 const content = document.querySelector(".content");
 const contentFinish = document.querySelector(".finish");
 const btnRestart = document.querySelector("#btnDashboard");
+const timerDisplay = document.querySelector(".timer");  // pega o elemento que vai mostrar o timer
 
 
 import questions from "./questions.js";
@@ -17,10 +18,11 @@ let questionsIncorrect = 0;
 let respostasPorPergunta = []; // 2 = acerto, 1 = erro
 
 
+
 btnRestart.onclick = () => {
   content.style.display = "flex";
   contentFinish.style.display = "none";
-  window.location.href = "dashboard1.html";
+   window.location.href = "dashboard1.html";
   currentIndex = 0;
   questionsCorrect = 0;
   questionsIncorrect = 0;
@@ -111,6 +113,7 @@ function loadQuestion() {
   document.querySelectorAll(".answer").forEach((item) => {
     item.addEventListener("click", nextQuestion);
   });
+  
 }
 
 loadQuestion();

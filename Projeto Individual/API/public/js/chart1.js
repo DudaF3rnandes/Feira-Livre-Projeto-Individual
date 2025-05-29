@@ -8,10 +8,10 @@ window.myChart = new Chart(ctxBar, {
             'Pergunta 9', 'Pergunta 10'
         ],
         datasets: [{
-            label: 'Acerto',
+            label: ['Acertos', 'Erros'],
             data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Começa zerado
-            backgroundColor: 'rgba(75, 192, 192, 0.6)',
-            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(4, 0, 255, 0.6)',
+            borderColor: 'rgba(8, 0, 255, 0.6)',
             borderWidth: 1
         }]
     },

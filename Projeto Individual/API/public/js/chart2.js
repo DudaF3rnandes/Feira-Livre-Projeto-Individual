@@ -7,12 +7,12 @@ window.doughnutChart = new Chart(ctxDoughnut, {
             label: 'Porcentagem',
             data: [0, 0], // Começa zerado
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
+                'rgb(251, 0, 54)',
+                'rgb(94, 255, 19)',
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
+                'rgb(251, 0, 54)',
+                'rgb(94, 255, 19)',
             ],
             borderWidth: 1
         }]
