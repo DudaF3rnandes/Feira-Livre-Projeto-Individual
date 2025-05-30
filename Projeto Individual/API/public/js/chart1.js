@@ -7,28 +7,44 @@ window.myChart = new Chart(ctxBar, {
             'Pergunta 5', 'Pergunta 6', 'Pergunta 7', 'Pergunta 8',
             'Pergunta 9', 'Pergunta 10'
         ],
-        datasets: [{
-            label: ['Acertos', 'Erros'],
-            data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Começa zerado
-            backgroundColor: 'rgba(4, 0, 255, 0.6)',
-            borderColor: 'rgba(8, 0, 255, 0.6)',
-            borderWidth: 1
-        }]
+        datasets: [
+            {
+                label: 'Acertos',
+                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Começa zerado
+                backgroundColor: 'rgba(0, 200, 0, 0.6)',  
+                borderColor: 'rgba(0, 150, 0, 0.8)',
+                borderWidth: 1
+            },
+            {
+                label: 'Erros',
+                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Começa zerado
+                backgroundColor: 'rgba(255, 0, 0, 0.6)', 
+                borderColor: 'rgba(200, 0, 0, 0.8)',
+                borderWidth: 1
+            }
+        ]
     },
     options: {
         scales: {
+            x: {
+                stacked: true
+            },
             y: {
+                stacked: true,
+                beginAtZero: true,
+                min: 0,
+                max: 2,
                 ticks: {
-                    callback: function (value) {
-                        const labels = ['', 'Errou', 'Acertou'];
-                        return labels[value] || '';
-                    },
                     stepSize: 1,
-                    min: 0,
-                    max: 2
-
+                    callback: function (value) {
+                        if (value == 0) return '';
+                        if(value == 1) return  'Errou';
+                        if (value == 2) return 'Acertou';
+                        return value || '';
+                    }
                 }
             }
         }
     }
 });
+

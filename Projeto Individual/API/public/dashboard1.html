@@ -21,8 +21,7 @@
             </div>
             <i class="fas fa-bell"></i>
             <div class="user">
-                <img src="./assets/do-utilizador.png"
-                    alt="Usuário">
+                <img src="./assets/do-utilizador.png" alt="Usuário">
             </div>
         </div>
         <div class="sidebar">
@@ -121,7 +120,26 @@
 
                     if (barChart && data.respostas) {
                         barChart.data.datasets[0].data = data.respostas;
-                        barChart.update();
+                       
+                           
+                            const certos = [];
+                            const errados = [];
+
+                            for (let i = 0; i < data.respostas.length; i++) {
+                                if (data.respostas[i] === 1) {
+                                    certos.push(2);
+                                    errados.push(0);
+                                        
+                                } else {
+                                    certos.push(0);
+                                    errados.push(1);
+                                }
+                            }
+
+                            barChart.data.datasets[0].data = certos;   // verde
+                            barChart.data.datasets[1].data = errados;  // vermelho
+                            barChart.update();
+                        
                     }
 
 
@@ -131,6 +149,8 @@
                     if (doughnutChart) {
                         doughnutChart.data.datasets[0].data = [data.incorretas, data.corretas];
                         doughnutChart.update();
+                     
+
                     }
                 }
             });

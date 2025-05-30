@@ -12,18 +12,18 @@ const timerDisplay = document.querySelector(".timer");
 // Importa as perguntas de outro arquivo
 import questions from "./questions.js";
 
-// Variáveis pra controlar o que tá acontecendo no quiz
-let currentIndex = 0; // qual pergunta tá sendo mostrada
-let questionsCorrect = 0; // quantas o usuário acertou
-let currentCoins = 0; // quantas moedas ele tem
-let questionsIncorrect = 0; // quantas errou (nem tá usando por enquanto)
+
+let currentIndex = 0; 
+let questionsCorrect = 0; 
+let currentCoins = 0; 
+let questionsIncorrect = 0; 
 let respostasPorPergunta = []; // pra salvar se o usuário acertou ou errou cada pergunta
 
-// Variáveis pro cronômetro
+
 let startTime; // quando o quiz começou
 let interval;  // vai guardar o intervalo do setInterval
 
-// Quando clicar no botão de reiniciar (ou ir pro dashboard)
+// ir pra dashboard
 btnRestart.onclick = () => {
   content.style.display = "flex"; // mostra o quiz de novo
   contentFinish.style.display = "none"; // esconde a parte de "acabou"
@@ -44,11 +44,11 @@ function nextQuestion(e) {
 
   if (correta) {
     questionsCorrect++;
-    currentCoins += 1500; // ganha 1500 moedas se acertar
-    respostasPorPergunta.push(2); // marca que acertou
+    currentCoins += 1500; 
+    respostasPorPergunta.push(2); 
   } else {
-    currentCoins = Math.max(0, currentCoins - 500); // perde 500 moedas se errar, mas nunca fica negativo
-    respostasPorPergunta.push(1); // marca que errou
+    currentCoins = Math.max(0, currentCoins - 500);
+    respostasPorPergunta.push(1); 
   }
 
   coinDisplay.textContent = `$${currentCoins}`; // atualiza na tela quanto de moedas ele tem
@@ -85,7 +85,7 @@ function finish() {
   // salva no localStorage (pra usar depois na dashboard)
   localStorage.setItem("quizData", JSON.stringify(data));
 
-  // se conseguiu juntar 10 mil moedas, mostra uma mensagem de parabéns
+  
   if (currentCoins >= 10000) {
     textFinish.innerHTML = `
       <p style="text-align: center; font-size: 15px; font-weight: bold; color: green;">
@@ -94,7 +94,7 @@ function finish() {
       <p><img src="./assets/Gemini_Generated_Image_m843slm843slm843-removebg-preview.png" width="300" style="display:block; margin: 0 auto;"></p>
     `;
   } else {
-    // se não conseguiu juntar 10 mil moedas, mostra que não conseguiu
+  
     textFinish.innerHTML = `
       <p style="text-align: center; font-size: 15px; font-weight: bold; color: red;">
         INFELIZMENTE, VOCÊ NÃO SE TORNOU UM FEIRANTE E NÃO CONSEGUE COMPRAR SUA BARRACA!
@@ -111,8 +111,8 @@ function finish() {
 function loadQuestion() {
   spnQtd.innerHTML = `${currentIndex + 1}/${questions.length}`; // atualiza qual pergunta tá sendo feita
   const item = questions[currentIndex];
-  answers.innerHTML = ""; // limpa as alternativas anteriores
-  question.innerHTML = item.question; // coloca o texto da pergunta na tela
+  answers.innerHTML = ""; 
+  question.innerHTML = item.question; 
 
   // cria os botões de resposta
   for (let i = 0; i < item.answers.length; i++) {
@@ -157,8 +157,8 @@ function updateTimer() {
     seconds = "0" + seconds;
   }
 
-  timerDisplay.textContent = `${minutes}:${seconds}`; // mostra o tempo no formato mm:ss
+  timerDisplay.textContent = `${minutes}:${seconds}`;
 }
 
-// Começa o quiz carregando a primeira pergunta
+
 loadQuestion();
