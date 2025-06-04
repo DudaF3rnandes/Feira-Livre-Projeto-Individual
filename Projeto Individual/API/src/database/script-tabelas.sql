@@ -17,18 +17,26 @@ email VARCHAR(45) NOT NULL UNIQUE,
 senha VARCHAR(45) NOT NULL
 );
 
-CREATE TABLE quizPergunta (
-idPergunta INT PRIMARY KEY AUTO_INCREMENT,
-pergunta VARCHAR(45),
-resposta VARCHAR(45)
+CREATE TABLE quiz (
+idQuiz INT PRIMARY KEY AUTO_INCREMENT,
+pergunta VARCHAR(255),
+alternativa1 VARCHAR(255),
+alternativa2 VARCHAR(255),
+alternativa3 VARCHAR(255),
+alternativaCorreta VARCHAR(255)
 );
 
 CREATE TABLE quizResposta (
 idResposta INT AUTO_INCREMENT,
 fkUsuario INT,
-fkPergunta INT,
-constraint pkComposta PRIMARY KEY (idResposta, fkUsuario, fkPergunta),
+fkQuiz INT,
+constraint pkComposta PRIMARY KEY (idResposta, fkUsuario, fkQuiz),
 constraint fkUsuarioResposta FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario),
-constraint fkquizPergunta FOREIGN KEY (fkPergunta) REFERENCES quizPergunta(idPergunta),
-statusResposta VARCHAR(45),
-constraint chkresposta CHECK (statusResposta IN('correta', 'incorreta'))); 
+constraint fkquizPergunta FOREIGN KEY (fkQuiz) REFERENCES quiz(idQuiz),
+RespostaCerta INT,
+RespostaErrada INT,
+BarracaEscolhida VARCHAR(45),
+FeiraCoinPerdida DECIMAL, 
+SaldoFinalFeiraCoin DECIMAL,
+TempoResposta INT
+); 

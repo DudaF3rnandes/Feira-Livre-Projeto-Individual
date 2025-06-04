@@ -9,17 +9,19 @@ window.myChart = new Chart(ctxBar, {
         ],
         datasets: [
             {
-                label: 'Acertos',
-                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Começa zerado
-                backgroundColor: 'rgba(0, 200, 0, 0.6)',  
-                borderColor: 'rgba(0, 150, 0, 0.8)',
+                label: 'Erros',
+                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                backgroundColor: 'rgba(255, 0, 0, 0.6)', 
+                borderColor: 'rgba(200, 0, 0, 0.8)', // Começa zerado
+               
                 borderWidth: 1
             },
             {
-                label: 'Erros',
-                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Começa zerado
-                backgroundColor: 'rgba(255, 0, 0, 0.6)', 
-                borderColor: 'rgba(200, 0, 0, 0.8)',
+                label: 'Acertos',
+                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                 backgroundColor: 'rgba(0, 200, 0, 0.6)',  
+                borderColor: 'rgba(0, 150, 0, 0.8)',  // Começa zerado
+                
                 borderWidth: 1
             }
         ]

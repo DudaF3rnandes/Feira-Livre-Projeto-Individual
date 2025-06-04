@@ -69,8 +69,9 @@ function finish() {
   const endTime = Date.now();
   const totalTime = Math.floor((endTime - startTime) / 1000); // tempo total em segundos
   const formattedTime = `${String(Math.floor(totalTime / 60)).padStart(2, '0')}:${String(totalTime % 60).padStart(2, '0')}`; // formata pra mm:ss
+  const idUsuario = sessionStorage.ID_USUARIO;
 
-  // monta os dados pra salvar
+
   const data = {
     corretas: questionsCorrect,
     incorretas: questions.length - questionsCorrect,
@@ -82,8 +83,29 @@ function finish() {
     respostas: respostasPorPergunta
   };
 
+  fetch("/quizResposta/registrar", {
+  method: "POST",
+  headers: {
+      "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    idUsuario: sessionStorage.ID_USUARIO,
+    idQuiz: 1,
+    corretas: questionsCorrect,
+    erradas: questions.length - questionsCorrect,
+    barraca: localStorage.getItem("barracaEscolhida"),
+    perdida: (questions.length - questionsCorrect) * 500,
+    saldo: currentCoins,
+    tempo: totalTime
+  })
+});
+
+
+
+
   // salva no localStorage (pra usar depois na dashboard)
   localStorage.setItem("quizData", JSON.stringify(data));
+  console.log("ID USUÁRIO", sessionStorage.ID_USUARIO);
 
   
   if (currentCoins >= 10000) {
@@ -103,18 +125,18 @@ function finish() {
     `;
   }
 
-  content.style.display = "none"; // esconde as perguntas
-  contentFinish.style.display = "flex"; // mostra o resultado final
+  content.style.display = "none"; 
+  contentFinish.style.display = "flex"; 
 }
 
-// Carrega a pergunta atual e mostra as opções de resposta
+
 function loadQuestion() {
   spnQtd.innerHTML = `${currentIndex + 1}/${questions.length}`; // atualiza qual pergunta tá sendo feita
   const item = questions[currentIndex];
   answers.innerHTML = ""; 
   question.innerHTML = item.question; 
 
-  // cria os botões de resposta
+  
   for (let i = 0; i < item.answers.length; i++) {
     const answer = item.answers[i];
     const div = document.createElement("div");

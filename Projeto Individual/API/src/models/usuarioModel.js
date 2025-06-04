@@ -22,7 +22,18 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucaoSql);
 }
 
+function registrar(idUsuario, idQuiz, corretas, erradas, barraca, perdida, saldo, tempo) {
+    var instrucaoSql = `
+        INSERT INTO quizResposta (fkUsuario, fkQuiz, RespostaCerta, RespostaErrada, BarracaEscolhida, FeiraCoinPerdida, SaldoFinalFeiraCoin, TempoResposta)
+        VALUES (${idUsuario}, ${idQuiz}, ${corretas}, ${erradas}, '${barraca}', ${perdida}, ${saldo}, ${tempo});
+    `;
+
+    return database.executar(instrucaoSql);
+}
+
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    registrar
 };
