@@ -25,9 +25,9 @@ let interval;  // vai guardar o intervalo do setInterval
 
 // ir pra dashboard
 btnRestart.onclick = () => {
-  content.style.display = "flex"; // mostra o quiz de novo
-  contentFinish.style.display = "none"; // esconde a parte de "acabou"
-  window.location.href = "dashboard1.html"; // manda pra página do dashboard
+  content.style.display = "flex"; 
+  contentFinish.style.display = "none"; 
+  window.location.href = "dashboard1.html"; 
 
   // reseta tudo
   currentIndex = 0;
@@ -35,12 +35,12 @@ btnRestart.onclick = () => {
   questionsIncorrect = 0;
   currentCoins = 0;
 
-  loadQuestion(); // carrega a primeira pergunta de novo
+  loadQuestion();
 };
 
 // Função que roda quando a pessoa clica numa resposta
 function nextQuestion(e) {
-  const correta = e.target.getAttribute("data-correct") === "true"; // verifica se clicou na certa
+  const correta = e.target.getAttribute("data-correct") === "true";
 
   if (correta) {
     questionsCorrect++;
@@ -51,14 +51,14 @@ function nextQuestion(e) {
     respostasPorPergunta.push(1); 
   }
 
-  coinDisplay.textContent = `$${currentCoins}`; // atualiza na tela quanto de moedas ele tem
+  coinDisplay.textContent = `$${currentCoins}`;
 
-  // se ainda tem mais perguntas
+  
   if (currentIndex < questions.length - 1) {
     currentIndex++;
-    loadQuestion(); // carrega a próxima
+    loadQuestion(); 
   } else {
-    finish(); // se acabou, mostra o resultado final
+    finish(); 
   }
 }
 
@@ -147,22 +147,22 @@ function loadQuestion() {
       </button>
     `;
 
-    answers.appendChild(div); // adiciona cada botão no HTML
+    answers.appendChild(div);
   }
 
-  // adiciona o evento de clique em cada botão
+  
   document.querySelectorAll(".answer").forEach((item) => {
     item.addEventListener("click", nextQuestion);
   });
 
-  // se for a primeira pergunta, começa o cronômetro
+  
   if (currentIndex === 0) {
     startTime = Date.now();
-    interval = setInterval(updateTimer, 1000); // atualiza o tempo a cada segundo
+    interval = setInterval(updateTimer, 1000); 
   }
 }
 
-// Atualiza o cronômetro na tela
+
 function updateTimer() {
   const now = Date.now();
   const totalSeconds = parseInt((now - startTime) / 1000); // segundos totais desde o começo

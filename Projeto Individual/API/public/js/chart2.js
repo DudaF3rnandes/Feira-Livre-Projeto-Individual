@@ -4,7 +4,7 @@ window.doughnutChart = new Chart(ctxDoughnut, {
     data: {
         labels: ['Incorretas', 'Corretas'],
         datasets: [{
-            label: 'Porcentagem',
+            label: 'Quantidade',
             data: [0, 0], // Começa zerado
             backgroundColor: [
                 'rgb(251, 0, 54)',

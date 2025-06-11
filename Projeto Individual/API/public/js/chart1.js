@@ -40,8 +40,8 @@ window.myChart = new Chart(ctxBar, {
                     stepSize: 1,
                     callback: function (value) {
                         if (value == 0) return '';
-                        if(value == 1) return  'Errou';
-                        if (value == 2) return 'Acertou';
+                        if(value == 1) return  'Acertou';
+                        if (value == 2) return 'Errou';
                         return value || '';
                     }
                 }
