@@ -90,20 +90,61 @@
   
 
     // Verificando se há algum campo em branco
-    if (
-      nomeVar == "" ||
-      emailVar == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == "") {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
+    // Verificando se há algum campo em branco
+if (
+  nomeVar == "" ||
+  emailVar == "" ||
+  senhaVar == "" ||
+  confirmacaoSenhaVar == ""
+) {
+  cardErro.style.display = "block";
+  mensagem_erro.innerHTML = "Todos os campos devem ser preenchidos.";
+  finalizarAguardar();
+  return false;
+}
 
-      finalizarAguardar();
-      return false;
-    } else {
-      setInterval(sumirMensagem, 5000);
-    }
+// Verificação de letra maiúscula
+let temMaiuscula = false;
+for (let i = 0; i < senhaVar.length; i++) {
+  let letra = senhaVar[i];
+  if (letra >= 'A' && letra <= 'Z') {
+    temMaiuscula = true;
+    break;
+  }
+}
+if (!temMaiuscula) {
+  cardErro.style.display = "block";
+  mensagem_erro.innerHTML = "A senha deve conter ao menos uma letra maiúscula.";
+  finalizarAguardar();
+  return false;
+}
+
+// Verificação de caractere especial
+const caracteresEspeciais = "!@#$%^&*()-_=+[]{};:'\",.<>/?\\|`~";
+let temEspecial = false;
+for (let i = 0; i < senhaVar.length; i++) {
+  if (caracteresEspeciais.includes(senhaVar[i])) {
+    temEspecial = true;
+    break;
+  }
+}
+if (!temEspecial) {
+  cardErro.style.display = "block";
+  mensagem_erro.innerHTML = "A senha deve conter ao menos um caractere especial.";
+  finalizarAguardar();
+  return false;
+}
+
+// Confirmação de senha
+if (senhaVar !== confirmacaoSenhaVar) {
+  cardErro.style.display = "block";
+  mensagem_erro.innerHTML = "As senhas não coincidem.";
+  finalizarAguardar();
+  return false;
+}
+
+setInterval(sumirMensagem, 5000);
+
 
     // Verificando se o código de ativação é de alguma empresa cadastrada
     for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
