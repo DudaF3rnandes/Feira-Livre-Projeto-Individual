@@ -19,7 +19,7 @@ senha VARCHAR(45) NOT NULL
 
 CREATE TABLE quiz (
 idQuiz INT PRIMARY KEY AUTO_INCREMENT,
-descricao VARCHAR(5)
+descricao VARCHAR(45)
 );
 
 CREATE TABLE quizResposta (
